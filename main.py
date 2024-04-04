@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from firebase_admin import credentials, firestore, initialize_app
 
 # Initialize FastAPI
@@ -37,6 +37,26 @@ async def get_user_data():
         user_data["user_document_id"] = user._reference.id
         data.append(user_data)
     return data
+
+
+@app.get("/get_user_data/{user_id}")
+async def get_user_data(request: Request, user_id: str):
+    # * Example for getting param
+    # {{base_url}}/get_user/qcEBYMn99sXbNllojMpk?param_name=something
+    # param_name = request.query_params.get("param_name")
+    # print("param_name:", param_name)
+
+    # Example: Get data from a 'users' collection
+    user_doc_ref = db.collection("users").document(user_id)
+    user = user_doc_ref.get()
+    
+    # Check if the document exists
+    if user.exists:
+        # Return the data
+        return user.to_dict()
+    else:
+        # Return an error message if the document doesn't exist
+        return {"error": "User Document not found"}
 
 
 # FastAPI Route to Update Data in Firestore
