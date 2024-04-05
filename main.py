@@ -34,7 +34,7 @@ async def get_user_data():
     data = []
     for user in users:
         user_data = user.to_dict()
-        user_data["user_document_id"] = user._reference.id
+        user_data["user_document_id"] = user.reference.id
         data.append(user_data)
     return data
 
