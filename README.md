@@ -9,14 +9,14 @@ pip install -r requirements.txt
 
 1. Begin by creating a Firebase project via the [Firebase console](https://console.firebase.google.com/).
 2. Navigate to "All products" and search for "Cloud Firestore."
-3. Proceed to create your database and select the nearest location. Opt for starting in "production mode" for enhanced stability and reliability.
-4. Voila! Your database is now successfully created.
+3. Proceed to create the database and select the nearest location. Opt for starting in "production mode" for enhanced stability and reliability.
+4. Our database is now successfully created.
 
 ## Generating and Utilizing a Service Account Key from Firestore:
 
-1. Access your project settings and locate the service accounts section.
+1. Access the project settings and locate the service accounts section.
 2. Click on "generate new private key" to generate a service account key.
-3. Copy and utilize the provided file path within your project for seamless integration and access to Firestore.
+3. Copy and utilize the provided file path within the project for seamless integration and access to Firestore.
 
 ## Run the project
 ```bash
