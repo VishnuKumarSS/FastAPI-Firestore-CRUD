@@ -1,4 +1,4 @@
-# FastAPI-Firestore-CRUD
+# FastAPI Firestore Basic CRUD
 
 ## Install dependencies:
 ```bash
